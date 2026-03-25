@@ -47,7 +47,7 @@ All from your phone. No expensive machines needed.
 ## 🚀 Quick Start
 
 ```bash
-git clone https://github.com/raizianofficial/YOUR_REPO_NAME.git
+git clone https://github.com/raizianofficial/ai-barcode-billing-system.git
 cd YOUR_REPO_NAME
 npm install
 npm run dev
