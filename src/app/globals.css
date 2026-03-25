@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc;
+  --foreground: #0f172a;
 }
 
 @theme inline {
@@ -12,15 +12,20 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom styles for POS */
+.pos-card {
+  @apply bg-white rounded-2xl border border-slate-100 shadow-sm transition-all;
+}
+
+.pos-btn-primary {
+  @apply bg-blue-600 text-white font-bold px-6 py-3 rounded-xl transition-all hover:bg-blue-700 active:scale-95 shadow-lg shadow-blue-100;
+}
+
+.pos-input {
+  @apply w-full rounded-xl border border-slate-200 py-3 px-4 outline-none focus:border-blue-500 bg-slate-50 transition-all font-medium;
 }
