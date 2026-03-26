@@ -17,7 +17,10 @@ body {
   color: var(--foreground);
 }
 
-/* Custom styles for POS */
+/* =========================
+   POS UI STYLES
+========================= */
+
 .pos-card {
   @apply bg-white rounded-2xl border border-slate-100 shadow-sm transition-all;
 }
@@ -30,13 +33,63 @@ body {
   @apply w-full rounded-xl border border-slate-200 py-3 px-4 outline-none focus:border-black bg-slate-50 transition-all font-medium;
 }
 
+/* =========================
+   🔥 SCANNER FIX (CRITICAL)
+========================= */
+
+/* container full screen */
+#reader {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  overflow: hidden;
+}
+
+/* fix zoom / crop issue */
+#reader video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  /* 🔥 MOST IMPORTANT */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* remove html5-qrcode garbage UI */
+#reader__dashboard_section,
+#reader__header_message,
+#reader__scan_region img {
+  display: none !important;
+}
+
+/* =========================
+   ✨ SCAN LINE ANIMATION
+========================= */
+
 @keyframes scan-animation {
-  0% { top: 0%; opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { top: 100%; opacity: 0; }
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
 }
 
 .scanner-line {
-  animation: scan-animation 2.5s ease-in-out infinite;
+  animation: scan-animation 2.2s linear infinite;
 }
