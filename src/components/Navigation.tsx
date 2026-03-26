@@ -26,8 +26,6 @@ export function Navigation() {
 
   const navItems = [
     { name: "Billing", href: "/", icon: ShoppingCart },
-    { name: "Orders", href: "/orders", icon: ClipboardList },
-    { name: "Products", href: "/products", icon: Package },
     { name: "Admin", href: "/admin", icon: LayoutDashboard },
   ];
 
@@ -54,15 +52,15 @@ export function Navigation() {
 
       {/* Bottom Navigation */}
       <nav className="fixed bottom-0 w-full z-50 px-4 pb-6 pt-2 pointer-events-none">
-        <div className="mx-auto max-w-md pointer-events-auto">
-          <div className="flex items-center justify-between bg-black/85 backdrop-blur-xl border border-white/20 p-2 rounded-3xl shadow-2xl shadow-black/40">
+        <div className="mx-auto max-w-[280px] pointer-events-auto">
+          <div className="flex items-center justify-around bg-black/90 backdrop-blur-xl border border-white/20 p-2 rounded-3xl shadow-2xl shadow-black/40">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`relative flex flex-col items-center justify-center w-[4.5rem] h-14 rounded-2xl transition-all duration-300 ${
+                  className={`relative flex flex-col items-center justify-center w-24 h-14 rounded-2xl transition-all duration-300 ${
                     isActive 
                       ? "text-white" 
                       : "text-slate-400 hover:text-white/80 hover:bg-white/5"
